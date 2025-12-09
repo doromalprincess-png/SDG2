@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About – SDG 2 Zero Hunger</title>
+
+<style>
+/* NAVIGATION */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d4af37; 
+    padding: 15px 30px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+nav strong {
+    font-size: 1.7em;
+    color: black;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+/* SECTION */
+section {
+    max-width: 900px;
+    margin: 50px auto;
+    font-family: Arial, sans-serif;
+    padding: 0 20px;
+}
+
+h2 {
+    color: #b39527;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* ABOUT BOX */
+.about-box {
+    background-color: rgba(212, 175, 55, 0.1);
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    margin-bottom: 50px;
+    line-height: 1.6;
+}
+
+/* FEATURE CARDS */
+.feature-cards, .team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.card {
+    background-color: rgba(212, 175, 55, 0.15);
+    padding: 20px;
+    border-radius: 12px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    color: #b39527;
+    margin-bottom: 10px;
+}
+
+/* TEAM CARDS – updated for 3 in one line */
+.team-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    flex-wrap: nowrap;
+}
+
+.team-cards .card {
+    width: 30%;
+    min-width: 250px;
+    padding: 25px;
+}
+
+/* Bigger Team Images */
+.team-cards img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 3px solid #d4af37;
+}
+
+/* FOOTER */
+footer {
+    background-color: #d4af37;
+    color: black;
+    text-align: center;
+    padding: 20px 10px;
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 600px) {
+    .team-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-cards .card {
+        width: 100%;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+    <strong>ZERO HUNGER</strong>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="swap.html">Ingredient Swap</a>
+		<a href="contact.html">Contact Us</a>
+        <a href="about.html">About</a>
+    </div>
+</nav>
+
+<section>
+    <h2>About This Project</h2>
+
+    <div class="about-box">
+        <p>
+            Welcome to <strong>Zero Hunger</strong>! This project supports <strong>SDG 2: Zero Hunger</strong> by promoting sustainable food choices and local agriculture.
+        </p>
+        <p>
+            Our mission is to help users understand the environmental impact of their meals and make simple, eco-friendly ingredient swaps.
+        </p>
+        <p>
+            By using this platform, you contribute to a healthier planet while enjoying delicious Filipino dishes. Share your recipes, explore swaps, and join our journey toward a world without hunger!
+        </p>
+    </div>
+
+    <h2>Our Features</h2>
+    <div class="feature-cards">
+        <div class="card">
+            <h3>Create Recipes</h3>
+            <p>Add your favorite Filipino dishes and share them with the community.</p>
+        </div>
+
+        <div class="card">
+            <h3>Support Local</h3>
+            <p>Encourage the use of locally sourced ingredients and support farmers.</p>
+        </div>
+    </div>
+
+    <h2>Meet the Team</h2>
+    <div class="team-cards">
+
+        <div class="card">
+            <img src="princess.jpg" alt="Team Member 1">
+            <h3>Princess Aeriel Doromal</h3>
+            <p>Project Manager</p>
+        </div>
+
+        <div class="card">
+            <img src="andrew.jpg" alt="Team Member 2">
+            <h3>Andrew Ken Cagalitan</h3>
+            <p>Programmer</p>
+        </div>
+
+        <div class="card">
+            <img src="merel.jpg" alt="Team Member 3">
+            <h3>Maerelle Claire Gabayoyo</h3>
+            <p>Designer</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © ZERO HUNGER SDG 2 | Sustainable Recipes Project | All Rights Reserved
+</footer>
+
+</body>
+</html>

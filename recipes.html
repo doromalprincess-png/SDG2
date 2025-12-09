@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sustainable Recipes</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .ingredients-list {
+    display: none;
+    margin-top: 10px;
+    padding-left: 20px;
+    text-align: left;
+    color: #333;
+  }
+  .btn {
+    display: inline-block;
+    background: #d4af37; /* Dark yellow */
+    color: black;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 8px;
+    cursor: pointer;
+    border: none;
+  }
+  .btn:hover {
+    background: #b39527;
+  }
+  .recipe-card .content {
+    background: rgba(212, 175, 55, 0.15);
+    padding: 15px;
+    border-radius: 0 0 10px 10px;
+  }
+
+  iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+  }
+
+  /* FOOTER */
+  footer {
+    background-color: #d4af37;
+    color: black;
+    text-align: center;
+    padding: 20px 10px;
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+  }
+</style>
+</head>
+
+<body>
+
+<nav>
+    <strong>ZERO HUNGER</strong>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="swap.html">Add Recipe</a>
+		<a href="contact.html">Contact Us</a>
+        <a href="about.html">About</a>
+    </div>
+</nav>
+
+<section>
+    <h2>Sustainable Recipes</h2>
+    <div class="recipe-grid" id="recipeContainer">
+
+        <!-- Static Recipes -->
+        <div class="recipe-card">
+            <img src="sinigang.jpg" alt="Sinigang">
+            <div class="content">
+                <h3>Sinigang na Baboy</h3>
+                <p>A tangy pork soup with vegetables and tamarind broth.</p>
+                <p><strong>Prep Time:</strong> 15 mins</p>
+                <button class="btn" onclick="toggleIngredients(this)">View Ingredients</button>
+                <button class="btn" onclick="deleteStaticRecipe(this)" style="background:red; color:white;">Delete Recipe</button>
+                <ul class="ingredients-list">
+                  <li>Pork</li>
+                  <li>Tamarind broth</li>
+                  <li>Tomatoes</li>
+                  <li>Radish</li>
+                  <li>Green chili</li>
+                  <li>Spinach</li>
+                  <li>Onions</li>
+                  <li>Fish sauce</li>
+                </ul>
+                <!-- YouTube Video Embed -->
+                <iframe src="https://www.youtube.com/embed/Vuk3wly8mxQ" title="Paano Magluto ng SINIGANG NA BABOY" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="recipe-card">
+            <img src="adobo.jpg" alt="Chicken Adobo">
+            <div class="content">
+                <h3>Chicken Adobo</h3>
+                <p>Classic Filipino stew with soy sauce, vinegar, and garlic.</p>
+                <p><strong>Prep Time:</strong> 10 mins</p>
+                <button class="btn" onclick="toggleIngredients(this)">View Ingredients</button>
+                <button class="btn" onclick="deleteStaticRecipe(this)" style="background:red; color:white;">Delete Recipe</button>
+                <ul class="ingredients-list">
+                  <li>Chicken</li>
+                  <li>Soy sauce</li>
+                  <li>Vinegar</li>
+                  <li>Garlic</li>
+                  <li>Bay leaves</li>
+                  <li>Black peppercorns</li>
+                  <li>Onion</li>
+                  <li>Water</li>
+                </ul>
+				<!-- YouTube Video Embed -->
+                <iframe width="1296" height="729" src="https://www.youtube.com/embed/5J076gwY33I" title="HOW To MAKE BEST CHICKEN ADOBO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		</div>
+        </div>
+        <div class="recipe-card">
+            <img src="vegetable-lumpia.jpg" alt="Vegetable Lumpia">
+            <div class="content">
+                <h3>Vegetable Lumpia</h3>
+                <p>Crispy spring rolls filled with mixed vegetables and served with sauce.</p>
+                <p><strong>Prep Time:</strong> 20 mins</p>
+                <button class="btn" onclick="toggleIngredients(this)">View Ingredients</button>
+                <button class="btn" onclick="deleteStaticRecipe(this)" style="background:red; color:white;">Delete Recipe</button>
+                <ul class="ingredients-list">
+                  <li>Cabbage</li>
+                  <li>Carrots</li>
+                  <li>Green beans</li>
+                  <li>Onions</li>
+                  <li>Garlic</li>
+                  <li>Spring roll wrappers</li>
+                  <li>Oil for frying</li>
+                  <li>Vinegar dipping sauce</li>
+                </ul>
+				<iframe width="1296" height="729" src="https://www.youtube.com/embed/Mb1ygN911jk" title="Lumpiang Gulay Recipe | Crispy Filipino Vegetable Spring Rolls" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © ZERO HUNGER SDG 2 | Sustainable Recipes Project | All Rights Reserved
+</footer>
+
+<script>
+function toggleIngredients(button) {
+    const ingredientsList = button.parentElement.querySelector(".ingredients-list");
+    if (ingredientsList.style.display === "none" || ingredientsList.style.display === "") {
+        ingredientsList.style.display = "block";
+        button.textContent = "Hide Ingredients";
+    } else {
+        ingredientsList.style.display = "none";
+        button.textContent = "View Ingredients";
+    }
+}
+
+/* Delete static recipe from page */
+function deleteStaticRecipe(button) {
+    const card = button.closest(".recipe-card");
+    card.remove();
+}
+
+/* Load custom recipes from localStorage */
+function loadCustomRecipes() {
+    const container = document.getElementById("recipeContainer");
+    const recipes = JSON.parse(localStorage.getItem("customRecipes")) || [];
+
+    recipes.forEach((recipe, index) => {
+        const card = document.createElement("div");
+        card.classList.add("recipe-card");
+
+        card.innerHTML = `
+            <img src="${recipe.image}" alt="${recipe.name}">
+            <div class="content">
+                <h3>${recipe.name}</h3>
+                <p>${recipe.description}</p>
+                <p><strong>Prep Time:</strong> ${recipe.prepTime}</p>
+                <button class="btn" onclick="toggleIngredients(this)">View Ingredients</button>
+                <button class="btn" onclick="deleteCustomRecipe(${index})" style="background:red; color:white;">Delete Recipe</button>
+                <ul class="ingredients-list">
+                    ${(recipe.ingredients || []).map(ing => `<li>${ing}</li>`).join('')}
+                </ul>
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+function deleteCustomRecipe(index) {
+    let recipes = JSON.parse(localStorage.getItem("customRecipes")) || [];
+    recipes.splice(index, 1);
+    localStorage.setItem("customRecipes", JSON.stringify(recipes));
+    alert("Recipe deleted!");
+    location.reload();
+}
+
+loadCustomRecipes();
+</script>
+
+</body>
+</html>

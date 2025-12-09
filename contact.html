@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Sustainable Recipes</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f8f8f8;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d4af37;
+    padding: 18px 35px;
+  }
+
+  nav strong {
+    font-size: 1.7em;
+    color: black;
+  }
+
+  nav a {
+    color: black;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #333;
+    text-decoration: underline;
+  }
+
+  section {
+    max-width: 700px;
+    margin: 50px auto;
+    background-color: rgba(212, 175, 55, 0.15);
+    padding: 30px;
+    border-radius: 12px;
+  }
+
+  h2 {
+    text-align: center;
+    color: #b39527;
+    margin-bottom: 25px;
+    font-size: 2em;
+  }
+
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+  }
+
+ .radio-group {
+    display: flex;
+    justify-content: flex-start; /* left align group */
+    gap: 20px; /* spacing between options */
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* wrap on smaller screens */
+    align-items: center;
+}
+
+.radio-group div {
+    display: flex;
+    align-items: center;
+}
+
+.radio-group input {
+    margin-right: 5px;
+}
+
+
+  button {
+    display: inline-block;
+    background: #d4af37;
+    color: black;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    font-size: 1em;
+  }
+
+  button:hover {
+    background: #b39527;
+  }
+
+  .star-rating {
+    display: flex;
+    justify-content: center; /* center the stars */
+    margin-bottom: 20px;
+  }
+
+  .star-rating .star {
+    font-size: 35px;
+    cursor: pointer;
+    margin: 0 5px;
+    color: #ccc;
+    transition: color 0.2s;
+  }
+
+  .star-rating .star.active {
+    color: gold;
+  }
+
+  footer {
+    background-color: #d4af37;
+    color: black;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 50px;
+  }
+</style>
+
+</head>
+<body>
+
+<nav>
+    <strong>ZERO HUNGER</strong>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="swap.html">Add Recipe</a>
+        <a href="contact.html">Contact Us</a>
+		<a href="about.html">About</a>
+    </div>
+</nav>
+
+<section>
+    <h2>Contact Us / Feedback</h2>
+    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Your Name">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Your Email">
+
+        <label for="message">Message / Feedback:</label>
+        <textarea id="message" placeholder="Your message"></textarea>
+
+        <label>Rate Our Website:</label>
+        <div class="star-rating">
+            <span class="star" data-value="1">☆</span>
+            <span class="star" data-value="2">☆</span>
+            <span class="star" data-value="3">☆</span>
+            <span class="star" data-value="4">☆</span>
+            <span class="star" data-value="5">☆</span>
+        </div>
+
+       <label>How would you rate our website overall?</label>
+<div class="radio-group">
+    <div>
+        <input type="radio" name="websiteRating" value="Excellent" id="excellent">
+        <label for="excellent">Excellent</label>
+    </div>
+    <div>
+        <input type="radio" name="websiteRating" value="Good" id="good">
+        <label for="good">Good</label>
+    </div>
+    <div>
+        <input type="radio" name="websiteRating" value="Average" id="average">
+        <label for="average">Average</label>
+    </div>
+    <div>
+        <input type="radio" name="websiteRating" value="Poor" id="poor">
+        <label for="poor">Poor</label>
+    </div>
+</div>
+
+
+        <button type="button" id="submitFeedback">Submit Feedback</button>
+    </form>
+</section>
+
+<footer>
+    © ZERO HUNGER SDG 2 | Sustainable Recipes Project | All Rights Reserved
+</footer>
+
+<script>
+// Star rating functionality
+const stars = document.querySelectorAll('.star-rating .star');
+let rating = 0;
+
+stars.forEach(star => {
+    star.addEventListener('mouseover', () => highlightStars(star.dataset.value));
+    star.addEventListener('mouseout', () => highlightStars(rating));
+    star.addEventListener('click', () => {
+        rating = star.dataset.value;
+        highlightStars(rating);
+    });
+});
+
+function highlightStars(count) {
+    stars.forEach(star => {
+        if (star.dataset.value <= count) {
+            star.textContent = '★';
+            star.classList.add('active');
+        } else {
+            star.textContent = '☆';
+            star.classList.remove('active');
+        }
+    });
+}
+
+
+// Submit feedback
+document.getElementById('submitFeedback').addEventListener('click', () => {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const websiteRating = document.querySelector('input[name="websiteRating"]:checked');
+
+    if (!name || !email || !message || rating === 0 || !websiteRating) {
+        alert('Please fill all fields, give a star rating, and select your website rating.');
+        return;
+    }
+
+    const feedback = {
+        name,
+        email,
+        message,
+        starRating: rating,
+        websiteRating: websiteRating.value
+    };
+
+    let feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
+    feedbacks.push(feedback);
+    localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
+
+    alert('Thank you for your feedback!');
+    document.getElementById('contactForm').reset();
+    rating = 0;
+    highlightStars(rating);
+});
+</script>
+
+</body>
+</html>

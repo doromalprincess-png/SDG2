@@ -1,0 +1,150 @@
+/* GENERAL STYLES */
+body {
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #bfa300; /* Dark Yellow */
+    color: #222; /* Keep text readable */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #bfa300; /* Dark Yellow */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #222;
+}
+
+/* HERO */
+.hero {
+    background: url('https://sdg.isu.edu.ph/wp-content/uploads/2022/11/SDG-2-1-1-1024x301.jpg') center/cover no-repeat;
+    padding: 150px 20px;
+    text-align: center;
+    color: white;
+}
+
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 50px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #bfa300; /* Dark Yellow */
+    padding: 12px 22px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin: 5px;
+    display: inline-block;
+}
+
+/* SECTIONS */
+section {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* INFO GRID (Why Zero Hunger Matters) */
+.info-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.info-card {
+    background: #fff4cc;
+    flex: 1 1 250px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* HELP GRID (How You Can Help) */
+.help-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.help-card {
+    background: #fff4cc;
+    flex: 1 1 250px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* RECIPE CARDS */
+.recipe-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.recipe-card {
+    width: 300px;
+    background: #fff4cc; /* light yellow background */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.recipe-card .content {
+    padding: 15px;
+}
+
+
+/* CALL TO ACTION */
+.cta {
+    background: #fff4cc;
+    padding: 60px 40px;
+}
+
+/* FOOTER */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
